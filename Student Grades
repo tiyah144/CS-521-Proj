@@ -1,0 +1,84 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace StudentGrades1
+{
+    public partial class Form1 : Form
+    {
+        private object txtGrade;
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double Objs, DataStructure, OperatingSystems, Total, Avg;
+            string grade;
+
+            Objs = int.Parse(txtObjs.Text);
+            DataStructure = int.Parse(txtDataStructure.Text);
+            OperatingSystems = int.Parse(txtOperatingSystems.Text);
+
+
+            Total = Objs + DataStructure + OperatingSystems;
+            txtTotal.Text = Total.ToString();
+
+            Avg = Total / 3;
+
+            txtAvg.Text = Avg.ToString();
+
+
+            if (Avg >= 75)
+            {
+                grade = "A";
+            }
+            else if (Avg >= 65)
+            {
+                grade = "B";
+            }
+            else if (Avg >= 55)
+            {
+                grade = "C";
+            }
+            else if (Avg >= 45)
+            {
+                grade = "D";
+            }
+            else
+            {
+                grade = "F";
+            }
+            txtGrades.Text = grade;
+
+        }
+    }
+}
